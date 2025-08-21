@@ -1,0 +1,235 @@
+/* Reset e base */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #1b1e23;
+
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    isolation: isolate;
+    background: linear-gradient(#051133, #053c7a);
+}
+
+.sky {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#051133, #053c7a);
+    z-index: 0;
+}
+
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.stars::before,
+.stars2::before,
+.stars3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: white;
+}
+
+.stars::before {
+    width: 1px;
+    height: 1px;
+    box-shadow:
+        5vw 10vh white, 12vw 30vh white, 20vw 5vh white, 28vw 18vh white,
+        40vw 9vh white, 46vw 27vh white, 52vw 14vh white, 65vw 8vh white,
+        77vw 35vh white, 83vw 12vh white, 90vw 28vh white, 3vw 55vh white,
+        26vw 80vh white, 34vw 66vh white, 58vw 60vh white, 74vw 64vh white,
+        91vw 69vh white, 97vw 88vh white;
+    animation: starPulse 5s infinite ease-in-out;
+}
+
+.stars2::before {
+    width: 2px;
+    height: 2px;
+    box-shadow:
+        7vw 18vh white, 15vw 8vh white, 23vw 26vh white,
+        31vw 12vh white, 45vw 18vh white, 53vw 26vh white,
+        61vw 15vh white, 76vw 18vh white, 84vw 29vh white,
+        6vw 73vh white, 39vw 82vh white, 55vw 88vh white,
+        72vw 90vh white, 88vw 76vh white;
+    animation: starPulse 7s infinite ease-in-out, starDrift 18s infinite ease-in-out;
+}
+
+.stars3::before {
+    width: 3px;
+    height: 3px;
+    box-shadow:
+        9vw 24vh white, 27vw 10vh white, 48vw 22vh white,
+        63vw 12vh white, 81vw 20vh white,
+        12vw 82vh white, 46vw 76vh white, 70vw 68vh white;
+    filter: blur(.3px);
+    animation: starPulse 9s infinite ease-in-out, starDrift 22s infinite ease-in-out;
+}
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        filter: brightness(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes starDrift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(10px, -10px);
+    }
+
+    50% {
+        transform: translate(-10px, 10px);
+    }
+
+    75% {
+        transform: translate(10px, 1px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.moon {
+    position: absolute;
+    width: min(18vw, 220px);
+    aspect-ratio: 1/1;
+    top: 10vh;
+    left: 12vw;
+    z-index: 1;
+}
+
+.moon::before {
+    content: "";
+    position: absolute;
+    inset: -25%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    filter: blur(6px);
+}
+
+.moon img {
+    width: 100%;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+    animation: moonGlow 6s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
+    }
+}
+
+.buildings {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    place-items: end center;
+}
+
+.buildings img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: clamp(24px, 4vw, 48px);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 1px rgb(255, 255, 255),
+        0 0 2px rgb(255, 255, 255),
+        0 0 5px rgb(255, 255, 255);
+
+}
+
+.hero-content .subtitle {
+    margin-top: 10px;
+    font-size: clamp(16px, 2vw, 22px);
+    color: rgba(255, 255, 255, 0.75);
+    /* branco mais claro */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow:
+        0 0 1px rgba(255, 255, 255, 0.6),
+        0 0 2px rgba(255, 255, 255, 0.6),
+        0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+
+.portfolio {
+    background-color: #1b1e23;
+    /* fundo igual ao resto do site */
+}
+
+.portfolio h1,
+.portfolio h2 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+}
+
+.profile-pic {
+    width: 380px;
+    /* largura fixa */
+    height: 380px;
+    /* altura igual = quadrado */
+    border-radius: 50%;
+    overflow: hidden;
+    /* corta qualquer excesso da imagem */
+    border: 5px solid #fff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* mantém proporção e preenche */
+}
