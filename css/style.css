@@ -9,6 +9,8 @@ body {
     margin: 0;
     overflow-x: hidden;
     background-color: #1b1e23;
+    scroll-behavior: smooth;
+
 
 }
 
@@ -204,17 +206,12 @@ body {
 
 .fade-in {
     opacity: 0;
-    animation: fadeIn 7s forwards;
+    animation: fadeIn 3s forwards;
 }
 
-.delay-1 {
-    animation-delay: 0.5s;
+.delay {
+    animation-delay: 0.2s;
     /* aparece primeiro */
-}
-
-.delay-2 {
-    animation-delay: 1.5s;
-    /* aparece depois */
 }
 
 @keyframes fadeIn {
@@ -223,6 +220,40 @@ body {
     }
 }
 
+
+.contact-button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 25px;
+    outline: none;
+    position: relative;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background-color: #fff;
+    color: #1b1e23;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.contact-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+    transform: translate(-50%, -50%);
+}
 
 .portfolio {
     background-color: #1b1e23;
@@ -311,7 +342,7 @@ body {
     transform: scale(1.05);
 }
 
-.sobre {
+.contatos {
     position: relative;
     padding: 100px 20px;
     text-align: center;
@@ -328,7 +359,7 @@ body {
     overflow: hidden;
 }
 
-.sobre::before {
+.contatos::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -336,7 +367,7 @@ body {
     z-index: 0;
 }
 
-.sobre::after {
+.contatos::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -348,7 +379,7 @@ body {
     z-index: 1;
 }
 
-.sobre h5 {
+.contatos h4 {
     position: relative;
     z-index: 2;
     color: rgba(255, 255, 255, 0.6);
@@ -358,16 +389,15 @@ body {
         0 0 5px rgba(255, 255, 255, 0.6);
 }
 
-.sobre-texto {
+.contatos-texto {
     text-align: center;
     width: 100%;
-    /* padrão para mobile */
     margin: 0 auto;
+    margin-bottom: 0.5em;
 }
 
-/* Apenas para telas grandes (desktop) */
 @media (min-width: 992px) {
-    .sobre-texto {
+    .contatos-texto {
         width: 50%;
     }
 }
@@ -379,10 +409,110 @@ footer {
 
 footer a svg {
     transition: transform 0.3s ease;
-    /* animação suave */
 }
 
 footer a:hover svg {
     transform: scale(1.2);
-    /* aumenta 20% ao passar o mouse */
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 10;
+    position: relative;
+}
+
+.contact-icon {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+}
+
+.contact-icon i {
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.contact-icon:hover i {
+    transform: scale(1.2);
+}
+
+
+
+
+/* Estilo da seção de serviços */
+.services-section {
+  background-color: #1d1f25; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #aaa;
+}
+
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #212529;
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+/* Efeito de hover */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .services-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
 }
