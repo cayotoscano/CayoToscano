@@ -255,6 +255,146 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
+
+/* Sobre Mim */
+.sobre-mim {
+    background-color: #111;
+    /* mantém tom escuro */
+}
+
+.sobre-mim h1 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.sobre-mim .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    padding-top: 0;
+}
+
+@media (max-width: 768px) {
+    .sobre-mim .container {
+        max-width: 100%;
+    }
+}
+
+.sobre-mim .perfil {
+    flex: 1 1 200px;
+    max-width: 250px;
+}
+
+.sobre-mim .perfil-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* garante quadrado */
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.sobre-mim .info {
+    flex: 2 1 300px;
+}
+
+.sobre-mim .info h2 {
+    margin-bottom: 1rem;
+}
+
+.sobre-mim .info p,
+.sobre-mim .info ul {
+    margin-bottom: 0.5rem;
+}
+
+.sobre-mim .info ul {
+    padding-left: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .sobre-mim .info {
+        flex: 1 1 100%;
+        /* ocupa toda a largura */
+        max-width: 95%;
+        text-align: left;
+        /* força alinhamento à esquerda */
+    }
+
+    .sobre-mim .container {
+        flex-direction: column;
+        /* empilha foto e info */
+        align-items: flex-start;
+        /* mantém tudo à esquerda */
+        gap: 1.5rem;
+        /* espaço entre foto e info */
+    }
+
+    .sobre-mim .info ul {
+        padding-left: 1.2rem;
+        /* mantém recuo da lista */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .sobre-mim .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sobre-mim .info ul {
+        padding-left: 0;
+    }
+}
+
+li {
+    list-style: none;
+    /* remove as bolinhas */
+    padding-left: 0;
+    /* remove o recuo padrão */
+    margin-bottom: 0.5rem;
+}
+
+.ferramentas {
+    background-color: #0D1117;
+}
+
+.ferramentas .card-body {
+    background-color: #161B22;
+}
+
+.ferramentas .card-body:hover {
+    transform: scale(1.05);
+}
+
+
+.ferramentas h1 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+
+
 .portfolio {
     background-color: #1b1e23;
     /* fundo igual ao resto do site */
@@ -405,22 +545,17 @@ body {
 
 footer {
     background-color: #0d1117;
+    color: white;
+    font-style: italic;
 }
 
-footer a svg {
-    transition: transform 0.3s ease;
-}
-
-footer a:hover svg {
-    transform: scale(1.2);
-}
 
 .contact-icons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    z-index: 10;
     position: relative;
+    z-index: 10;
 }
 
 .contact-icon {
@@ -430,6 +565,8 @@ footer a:hover svg {
 }
 
 .contact-icon i {
+    display: inline-block;
+    /* <- importante */
     font-size: 2rem;
     color: white;
     transition: transform 0.3s ease;
@@ -442,77 +579,91 @@ footer a:hover svg {
 
 
 
-/* Estilo da seção de serviços */
+
 .services-section {
-  background-color: #1d1f25; /* Fundo escuro */
-  color: #fff; /* Texto branco */
-  padding: 50px 20px;
-  text-align: center;
+    background-color: #0D1117;
+    /* Fundo escuro */
+    color: #fff;
+    /* Texto branco */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services-section h1 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 3rem;
+    position: relative;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 40px;
-  color: #aaa;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #aaa;
 }
 
 .services-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 .service-card {
-  background-color: #212529;
-  padding: 20px;
-  width: 250px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #161B22;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card i {
-  font-size: 3rem;
-  color: #007bff;
-  margin-bottom: 15px;
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 15px;
 }
 
 .service-card h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .service-card p {
-  font-size: 1rem;
-  color: #bbb;
+    font-size: 1rem;
+    color: #bbb;
 }
 
 /* Efeito de hover */
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .services-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+    .services-cards {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .service-card {
-    width: 80%;
-    margin-bottom: 20px;
-  }
+    .service-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
 }
