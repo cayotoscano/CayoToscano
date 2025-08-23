@@ -10,10 +10,9 @@ body {
     overflow-x: hidden;
     background-color: #1b1e23;
     scroll-behavior: smooth;
-
-
 }
 
+/* HERO */
 .hero {
     position: relative;
     height: 100vh;
@@ -119,12 +118,13 @@ body {
     }
 }
 
+/* MOON */
 .moon {
     position: absolute;
-    width: min(18vw, 220px);
-    aspect-ratio: 1/1;
     top: 10vh;
     left: 12vw;
+    width: min(18vw, 220px);
+    aspect-ratio: 1/1;
     z-index: 1;
 }
 
@@ -132,8 +132,8 @@ body {
     content: "";
     position: absolute;
     inset: -25%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
     border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
     filter: blur(6px);
 }
 
@@ -156,12 +156,13 @@ body {
     }
 }
 
+/* BUILDINGS */
 .buildings {
     position: absolute;
     inset: 0;
-    z-index: 2;
     display: grid;
     place-items: end center;
+    z-index: 2;
 }
 
 .buildings img {
@@ -172,29 +173,24 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+/* HERO CONTENT */
 .hero-content {
     position: relative;
     z-index: 3;
     height: 100%;
     display: grid;
     place-items: center;
-    color: white;
     font-size: clamp(24px, 4vw, 48px);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
-    color: rgb(255, 255, 255);
+    color: #fff;
     text-shadow:
-        0 0 1px rgb(255, 255, 255),
-        0 0 2px rgb(255, 255, 255),
-        0 0 5px rgb(255, 255, 255);
-
+        0 0 1px #fff,
+        0 0 2px #fff,
+        0 0 5px #fff;
 }
 
 .hero-content .subtitle {
     margin-top: 10px;
     font-size: clamp(16px, 2vw, 22px);
-    color: rgba(255, 255, 255, 0.75);
-    /* branco mais claro */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
     font-weight: 300;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.6);
@@ -211,7 +207,6 @@ body {
 
 .delay {
     animation-delay: 0.2s;
-    /* aparece primeiro */
 }
 
 @keyframes fadeIn {
@@ -220,29 +215,31 @@ body {
     }
 }
 
-
+/* BUTTON */
 .contact-button {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+    position: relative;
+    z-index: 4;
     padding: 12px 22px;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    cursor: pointer;
+    border: 2px solid #fff;
     border-radius: 25px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
     outline: none;
-    position: relative;
-    z-index: 4;
+    text-decoration: none;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    text-decoration: none;
 }
 
 .contact-button:hover {
     background-color: #fff;
     color: #1b1e23;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.8);
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.8);
 }
 
 .contact-button:before {
@@ -251,27 +248,24 @@ body {
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    animation: pulse 1.5s infinite;
     transform: translate(-50%, -50%);
+    animation: pulse 1.5s infinite;
 }
 
-
-
-/* Sobre Mim */
+/* SOBRE MIM */
 .sobre-mim {
     background-color: #0D1117;
-    /* mantém tom escuro */
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .sobre-mim h1 {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    letter-spacing: 2px;
+    margin-bottom: 3rem;
     font-size: clamp(32px, 5vw, 56px);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
-    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     position: relative;
 }
 
@@ -281,14 +275,7 @@ body {
     justify-content: space-between;
     max-width: 60%;
     margin: 0 auto;
-    padding: 2rem 1rem;
-    padding-top: 0;
-}
-
-@media (max-width: 768px) {
-    .sobre-mim .container {
-        max-width: 100%;
-    }
+    padding: 0 1rem 2rem;
 }
 
 .sobre-mim .perfil {
@@ -299,10 +286,9 @@ body {
 .sobre-mim .perfil-img {
     width: 100%;
     aspect-ratio: 1/1;
-    /* garante quadrado */
     object-fit: cover;
     border-radius: 12px;
-    border: 2px solid #ffffff;
+    border: 2px solid #fff;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
@@ -324,29 +310,22 @@ body {
 }
 
 @media (max-width: 768px) {
-    .sobre-mim .info {
-        flex: 1 1 100%;
-        /* ocupa toda a largura */
-        max-width: 95%;
-        text-align: left;
-        /* força alinhamento à esquerda */
-    }
-
     .sobre-mim .container {
         flex-direction: column;
-        /* empilha foto e info */
         align-items: flex-start;
-        /* mantém tudo à esquerda */
         gap: 1.5rem;
-        /* espaço entre foto e info */
+        max-width: 95%;
+    }
+
+    .sobre-mim .info {
+        flex: 1 1 100%;
+        text-align: left;
     }
 
     .sobre-mim .info ul {
         padding-left: 1.2rem;
-        /* mantém recuo da lista */
     }
 }
-
 
 @media (max-width: 768px) {
     .sobre-mim .container {
@@ -360,46 +339,65 @@ body {
     }
 }
 
+@media (max-width: 982px) {
+    .sobre-mim .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        max-width: 95%;
+    }
+
+    .sobre-mim .perfil {
+        margin: 0 auto;
+    }
+
+    .sobre-mim .info {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .sobre-mim .info ul {
+        padding-left: 0;
+    }
+}
+
 li {
     list-style: none;
-    /* remove as bolinhas */
     padding-left: 0;
-    /* remove o recuo padrão */
     margin-bottom: 0.5rem;
 }
 
+/* FERRAMENTAS */
 .ferramentas {
     background-color: #0D1117;
+}
+
+.ferramentas h1 {
+    margin-bottom: 3rem;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
 }
 
 .ferramentas .card-body {
     background-color: #161B22;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ferramentas .card-body:hover {
     transform: scale(1.05);
 }
 
-
-.ferramentas h1 {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    letter-spacing: 2px;
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-
-
+/* PORTFÓLIO */
 .portfolio {
-    background-color: #1b1e23;
-    /* fundo igual ao resto do site */
+    background-color: #0d1117;
 }
 
 .portfolio h1,
@@ -408,18 +406,13 @@ li {
     letter-spacing: 2px;
 }
 
-
-.portfolio {
-    background-color: #0d1117;
-}
-
 .portfolio h1 {
+    margin-bottom: 3rem;
     font-size: clamp(32px, 5vw, 56px);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
-    margin-bottom: 3rem;
     position: relative;
 }
 
@@ -428,8 +421,8 @@ li {
     display: block;
     width: 80px;
     height: 4px;
-    background: #ffffff;
     margin: 10px auto 0;
+    background: #fff;
     border-radius: 2px;
 }
 
@@ -461,21 +454,21 @@ li {
 .portfolio .card-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #fff;
 }
 
 .portfolio .card-text {
-    color: #bbb;
     font-size: 0.95rem;
+    color: #bbb;
 }
 
 .portfolio .btn {
-    background: #ffffff;
-    border: none;
-    color: #0d1117;
-    font-weight: bold;
-    border-radius: 25px;
     padding: 8px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background: #fff;
+    color: #0d1117;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
@@ -484,20 +477,17 @@ li {
     transform: scale(1.05);
 }
 
+/* CONTATOS */
 .contatos {
     position: relative;
     padding: 100px 20px;
     text-align: center;
-    color: #ffffff;
-
-    border-top: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
+    color: #fff;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     box-shadow:
-        0 -0 5px #ffffff,
-        0 -0 10px #ffffff,
-        0 0 5px #ffffff,
-        0 0 10px #ffffff;
-
+        0 0 5px #fff,
+        0 0 10px #fff;
     overflow: hidden;
 }
 
@@ -521,6 +511,20 @@ li {
     z-index: 1;
 }
 
+.contatos i {
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.contatos i:hover {
+    transform: scale(1.2);
+}
+
 .contatos h4 {
     position: relative;
     z-index: 2;
@@ -532,10 +536,9 @@ li {
 }
 
 .contatos-texto {
-    text-align: center;
     width: 100%;
-    margin: 0 auto;
-    margin-bottom: 0.5em;
+    margin: 0 auto 0.5em;
+    text-align: center;
 }
 
 @media (min-width: 992px) {
@@ -544,13 +547,11 @@ li {
     }
 }
 
-
 footer {
     background-color: #0d1117;
-    color: white;
+    color: #fff;
     font-style: italic;
 }
-
 
 .contact-icons {
     display: flex;
@@ -561,16 +562,14 @@ footer {
 }
 
 .contact-icon {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     z-index: 20;
 }
 
 .contact-icon i {
-    display: inline-block;
-    /* <- importante */
     font-size: 2rem;
-    color: white;
+    color: #fff;
     transition: transform 0.3s ease;
 }
 
@@ -578,28 +577,22 @@ footer {
     transform: scale(1.2);
 }
 
-
-
-
-
+/* SERVIÇOS */
 .services-section {
-    background-color: #0D1117;
-    /* Fundo escuro */
-    color: #fff;
-    /* Texto branco */
     padding: 50px 20px;
     text-align: center;
+    background-color: #0D1117;
+    color: #fff;
 }
 
 .services-section h1 {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    letter-spacing: 2px;
+    margin-bottom: 3rem;
     font-size: clamp(32px, 5vw, 56px);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
-    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     position: relative;
 }
 
@@ -625,25 +618,25 @@ footer {
 }
 
 .service-card {
-    background-color: #161B22;
-    padding: 20px;
     width: 250px;
+    padding: 20px;
+    text-align: center;
+    background-color: #161B22;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card i {
+    margin-bottom: 15px;
     font-size: 3rem;
     color: #007bff;
-    margin-bottom: 15px;
 }
 
 .service-card h3 {
+    margin-bottom: 15px;
     font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 15px;
 }
 
 .service-card p {
@@ -651,13 +644,11 @@ footer {
     color: #bbb;
 }
 
-/* Efeito de hover */
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .services-cards {
         flex-direction: column;
